@@ -1,0 +1,19 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        bootstrap: true
+        git:
+#          uri: https://github.com/oiprado/spring-config-server.git
+          uri: file://${user.home}/config-repo/config-server-properties
+#          uri: file://${user.home}/config-repo/spring-config-server
+          searchPaths: '{application}'
+application:
+  default-home: ${user.home}
+
+
